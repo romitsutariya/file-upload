@@ -1,9 +1,11 @@
 var express	=	require("express");
 var multer	=	require('multer');
 var app	=	express();
+require("dotenv").config();
+const FILE_UPLOAD_URI =process.env.FILE_UPLOAD_URI
 var storage	=	multer.diskStorage({
   destination: function (req, file, callback) {
-    callback(null, './uploads');
+    callback(null, FILE_UPLOAD_URI);
   },
   filename: function (req, file, callback) {
 	callback(null, file.originalname);
@@ -23,7 +25,5 @@ app.post('/upload',function(req,res){
 		res.end("File is uploaded successfully!");
 	});
 });
-
-app.listen(2000,function(){
-    console.log("Server is running on port 2000");
-});
+const PORT = process.env.PORT || 5000
+app.listen(PORT, console.log(`server started, listening PORT ${PORT}`))
