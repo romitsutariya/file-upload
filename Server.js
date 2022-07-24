@@ -1,5 +1,7 @@
 var express	=	require("express");
 var multer	=	require('multer');
+var os = require("os");
+var hostname = os.hostname();
 var app	=	express();
 require("dotenv").config();
 const FILE_UPLOAD_URI =process.env.FILE_UPLOAD_URI
@@ -22,7 +24,7 @@ app.post('/upload',function(req,res){
 		if(err) {
 			return res.end("Error uploading file.");
 		}
-		res.end("File is uploaded successfully!");
+		res.end("File is uploaded successfully on Host : "+hostname);
 	});
 });
 const PORT = process.env.PORT || 5000
