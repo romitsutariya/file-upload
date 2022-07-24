@@ -2,14 +2,15 @@
   "name": "file_upload",
   "version": "0.0.1",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "4.13.3",
     "multer": "1.1.0",
-    "nodemon": "^2.0.12"
+    "websocket": "^1.0.34"
   },
   "devDependencies": {
     "should": "~7.1.0",
     "mocha": "~2.3.3",
-    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.12",
     "supertest": "~1.1.0"
   }
 }
